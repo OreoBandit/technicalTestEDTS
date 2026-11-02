@@ -17,7 +17,11 @@ test("add to cart indomaret", async ({ page }) => {
   await page
     .locator("//button[@class='menu-list gap-x-2 menu-list-active']")
     .click();
-  await page.locator("//div[normalize-space()='Madu']").click();
+  await page
+    .locator(
+      "//span[contains(@class,'capitalize')][normalize-space()='Makanan']",
+    )
+    .click();
   await page.locator("//*[@id='default-card']").first().click();
   await page.getByRole("button", { name: "keranjang" }).click();
 });
